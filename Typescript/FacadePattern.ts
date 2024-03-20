@@ -1,3 +1,4 @@
+export {};
 // Complex subsystem classes
 class CPU {
   powerOn(): string {

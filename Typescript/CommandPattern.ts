@@ -1,3 +1,4 @@
+export {};
 // Command interface
 interface Command {
   execute(): void;

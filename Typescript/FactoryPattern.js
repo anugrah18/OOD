@@ -1,89 +1,120 @@
 "use strict";
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        if (typeof b !== "function" && b !== null)
+            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+exports.__esModule = true;
 // Concrete Products
-class Car {
-    constructor(transmission) {
+var Car = /** @class */ (function () {
+    function Car(transmission) {
         this.transmission = transmission;
     }
-    start() {
-        return `Car with ${this.transmission} transmission started`;
-    }
-    stop() {
-        return `Car with ${this.transmission} transmission stopped`;
-    }
-}
+    Car.prototype.start = function () {
+        return "Car with ".concat(this.transmission, " transmission started");
+    };
+    Car.prototype.stop = function () {
+        return "Car with ".concat(this.transmission, " transmission stopped");
+    };
+    return Car;
+}());
 // Concrete Products
-class Motorcycle {
-    start() {
+var Motorcycle = /** @class */ (function () {
+    function Motorcycle() {
+    }
+    Motorcycle.prototype.start = function () {
         return "Motorcycle started";
-    }
-    stop() {
+    };
+    Motorcycle.prototype.stop = function () {
         return "Motorcycle stopped";
-    }
-}
+    };
+    return Motorcycle;
+}());
 // Concrete Products
-class Truck {
-    constructor(transmission) {
+var Truck = /** @class */ (function () {
+    function Truck(transmission) {
         this.transmission = transmission;
     }
-    start() {
-        return `Truck with ${this.transmission} transmission started`;
-    }
-    stop() {
-        return `Truck with ${this.transmission} transmission stopped`;
-    }
-}
+    Truck.prototype.start = function () {
+        return "Truck with ".concat(this.transmission, " transmission started");
+    };
+    Truck.prototype.stop = function () {
+        return "Truck with ".concat(this.transmission, " transmission stopped");
+    };
+    return Truck;
+}());
 // Concrete Products
-class ManualCar extends Car {
-    constructor() {
-        super("manual");
+var ManualCar = /** @class */ (function (_super) {
+    __extends(ManualCar, _super);
+    function ManualCar() {
+        return _super.call(this, "manual") || this;
     }
-    start() {
-        return "Manual " + super.start();
-    }
-    stop() {
-        return "Manual " + super.stop();
-    }
-}
+    ManualCar.prototype.start = function () {
+        return "Manual " + _super.prototype.start.call(this);
+    };
+    ManualCar.prototype.stop = function () {
+        return "Manual " + _super.prototype.stop.call(this);
+    };
+    return ManualCar;
+}(Car));
 // Concrete Products
-class AutomaticCar extends Car {
-    constructor() {
-        super("automatic");
+var AutomaticCar = /** @class */ (function (_super) {
+    __extends(AutomaticCar, _super);
+    function AutomaticCar() {
+        return _super.call(this, "automatic") || this;
     }
-    start() {
-        return "Automatic " + super.start();
-    }
-    stop() {
-        return "Automatic " + super.stop();
-    }
-}
+    AutomaticCar.prototype.start = function () {
+        return "Automatic " + _super.prototype.start.call(this);
+    };
+    AutomaticCar.prototype.stop = function () {
+        return "Automatic " + _super.prototype.stop.call(this);
+    };
+    return AutomaticCar;
+}(Car));
 // Concrete Products
-class ManualTruck extends Car {
-    constructor() {
-        super("manual");
+var ManualTruck = /** @class */ (function (_super) {
+    __extends(ManualTruck, _super);
+    function ManualTruck() {
+        return _super.call(this, "manual") || this;
     }
-    start() {
-        return "Manual " + super.start();
-    }
-    stop() {
-        return "Manual " + super.stop();
-    }
-}
+    ManualTruck.prototype.start = function () {
+        return "Manual " + _super.prototype.start.call(this);
+    };
+    ManualTruck.prototype.stop = function () {
+        return "Manual " + _super.prototype.stop.call(this);
+    };
+    return ManualTruck;
+}(Car));
 // Concrete Products
-class AutomaticTruck extends Truck {
-    constructor() {
-        super("automatic");
+var AutomaticTruck = /** @class */ (function (_super) {
+    __extends(AutomaticTruck, _super);
+    function AutomaticTruck() {
+        return _super.call(this, "automatic") || this;
     }
-    start() {
-        return "Automatic " + super.start();
-    }
-    stop() {
-        return "Automatic " + super.stop();
-    }
-}
+    AutomaticTruck.prototype.start = function () {
+        return "Automatic " + _super.prototype.start.call(this);
+    };
+    AutomaticTruck.prototype.stop = function () {
+        return "Automatic " + _super.prototype.stop.call(this);
+    };
+    return AutomaticTruck;
+}(Truck));
 // Concrete Creators
-class CarFactory {
-    createAutomobile(transmission) {
-        const transmissionType = transmission === null || transmission === void 0 ? void 0 : transmission.toLowerCase();
+var CarFactory = /** @class */ (function () {
+    function CarFactory() {
+    }
+    CarFactory.prototype.createAutomobile = function (transmission) {
+        var transmissionType = transmission === null || transmission === void 0 ? void 0 : transmission.toLowerCase();
         switch (transmissionType) {
             case "manual":
                 return new ManualCar();
@@ -92,11 +123,14 @@ class CarFactory {
             default:
                 throw new Error("Invalid transmission type");
         }
+    };
+    return CarFactory;
+}());
+var TruckFactory = /** @class */ (function () {
+    function TruckFactory() {
     }
-}
-class TruckFactory {
-    createAutomobile(transmission) {
-        const transmissionType = transmission === null || transmission === void 0 ? void 0 : transmission.toLowerCase();
+    TruckFactory.prototype.createAutomobile = function (transmission) {
+        var transmissionType = transmission === null || transmission === void 0 ? void 0 : transmission.toLowerCase();
         switch (transmissionType) {
             case "manual":
                 return new ManualTruck();
@@ -105,23 +139,27 @@ class TruckFactory {
             default:
                 throw new Error("Invalid transmission type");
         }
+    };
+    return TruckFactory;
+}());
+var MotorcycleFactory = /** @class */ (function () {
+    function MotorcycleFactory() {
     }
-}
-class MotorcycleFactory {
-    createAutomobile() {
+    MotorcycleFactory.prototype.createAutomobile = function () {
         return new Motorcycle();
-    }
-}
+    };
+    return MotorcycleFactory;
+}());
 // Client code
 function clientCode(factory, transmission) {
-    const automobile = factory.createAutomobile(transmission);
+    var automobile = factory.createAutomobile(transmission);
     console.log(automobile.start());
     console.log(automobile.stop());
 }
 // Usage
-const carFactory = new CarFactory();
-const truckFactory = new TruckFactory();
-const motocycleFactory = new MotorcycleFactory();
+var carFactory = new CarFactory();
+var truckFactory = new TruckFactory();
+var motocycleFactory = new MotorcycleFactory();
 console.log("Client is using a manual car:");
 clientCode(carFactory, "manual");
 console.log("\nClient is using an automatic car:");

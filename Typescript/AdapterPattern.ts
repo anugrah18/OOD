@@ -1,3 +1,4 @@
+export {};
 // Adaptee - EuropeanSocket
 class EuropeanSocket {
   plug(): string {

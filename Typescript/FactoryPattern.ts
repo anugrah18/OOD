@@ -1,3 +1,4 @@
+export {};
 // Product interface
 interface Automobile {
   start(): string;

@@ -1,3 +1,4 @@
+export {};
 // Define the strategy interface
 interface SuperpowerStrategy {
   useSuperpower(): string;

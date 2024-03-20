@@ -1,3 +1,4 @@
+export {};
 // Component Interface
 interface Component {
   get_price(): number;

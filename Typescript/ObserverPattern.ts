@@ -1,3 +1,4 @@
+export {};
 // Subject (Observable)
 class WeatherStation {
   location: string;

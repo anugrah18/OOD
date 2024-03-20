@@ -1,3 +1,4 @@
+export {};
 // Interface for payment
 interface Payment {
   pay(amount: number): void;

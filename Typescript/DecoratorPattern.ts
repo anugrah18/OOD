@@ -1,3 +1,4 @@
+export {};
 // Base Pizza class
 class Pizza {
   makePizza(): string {
