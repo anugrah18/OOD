@@ -1,3 +1,4 @@
+export {};
 abstract class CaffeineBeverage {
   prepareRecipe(): void {
     this.boilWater();

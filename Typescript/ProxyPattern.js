@@ -1,3 +1,5 @@
+"use strict";
+exports.__esModule = true;
 // Real Payment
 var RealPayment = /** @class */ (function () {
     function RealPayment() {

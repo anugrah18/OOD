@@ -1,3 +1,4 @@
+export {};
 // Context: AmazonOrder
 class AmazonOrder {
   private state: OrderState;
