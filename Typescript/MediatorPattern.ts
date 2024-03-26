@@ -1,3 +1,4 @@
+export {};
 // Mediator interface
 interface ChatMediator {
   send_message(message: string, sender: User): void;
